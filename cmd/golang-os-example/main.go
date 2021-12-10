@@ -23,6 +23,13 @@ func main() {
 	} else {
 		listFileTreeUnix()
 	}
+
+	// Read file
+	file, err := os.ReadFile("README.md") // NOTE: Requires go version >= 1.6
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(file))
 }
 
 // List files in current directory as a tree (Unix)
